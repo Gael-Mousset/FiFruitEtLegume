@@ -15,6 +15,7 @@ class ProducteurController extends AbstractController
     {
         $repository=$this->getDoctrine()->getManager()->getRepository('App\Entity\Producteur');
         $producteurs=$repository->findAll();
+
         return $this->render('Producteur/index.html.twig', [
             'controller_name' => 'EvenementController',
             'producteurs'=> $producteurs,

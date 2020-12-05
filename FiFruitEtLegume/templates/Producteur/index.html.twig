@@ -2,8 +2,7 @@
 {% block title %}Liste des producteurs{% endblock %}
 {% block body %}
     <style>
-        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%;
-            font: 18px/1.5 sans-serif; }
+        .example-wrapper { margin: 1em auto; font: 18px/1.5 sans-serif; }
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 
         a{
@@ -21,17 +20,51 @@
                 <div class="media-body">
                     <h5>{{ pdct.nomdelentreprise }} <br>
                         <a class="navbar-brand" href="/detailproducteur/{{ pdct.id }}">
-                             {{ pdct.nom}} {{ pdct.prenom }}
+                            {{ pdct.nom}} {{ pdct.prenom }}
                         </a>
                     </h5>
                     <p>{{ pdct.description }}</p>
                     <p>tel: {{ pdct.telephone }}</p>
+                    <div style="display: flex; background-color: #5eb5e0; flex-wrap: wrap">
+                        <div class="card" style="width: 30%;">
+                            <img src="grathis"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ pdct.nom }}</h5>
+                                <p class="card-text">prix</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 30%;">
+                            <img src="grathis"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ pdct.nom }}</h5>
+                                <p class="card-text">prix</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 30%;">
+                            <img src="grathis"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ pdct.nom }}</h5>
+                                <p class="card-text">prix</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 30%;">
+                            <img src="grathis"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ pdct.nom }}</h5>
+                                <p class="card-text">prix</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
             <br>
         {% endfor %}
-
-
-
     </div>
 {% endblock %}
+

@@ -1,27 +1,150 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{ producteur.nom }} {{ producteur.prenom }}{% endblock %}
+{% block title %}{{ producteur.prenom }} {{ producteur.nom }}{% endblock %}
 {% block body %}
     <style>
-        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%;
+        .example-wrapper { margin: 1em auto;
             font: 18px/1.5 sans-serif; }
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
     </style>
     <div class="example-wrapper">
-        <h1>{{ producteur.nom }} {{ producteur.prenom }}</h1>
-        <p>{{ producteur.nomdelentreprise }}</p>
-        <p>{{ producteur.adresse }}</p>
-        <p>{{ producteur.telephone }}</p>
-        <h3>Mes produits: </h3>
-        <ul>
-            {% for pdt in cesProduits %}
-                <li style="list-style: none">{{ pdt.nom}}
-                    <ul style="list-style: none">
-                        <li>Description: {{ pdt.description }}</li>
-                        <li>Type: {{ pdt.type }}</li>
-                    </ul>
-                </li>
-                <p></p>
-            {% endfor %}
-        </ul>
+        <br>
+        {% if producteur.nomdelentreprise == null %}
+            <p> Bienvenue chez <strong>{{ producteur.prenom }} {{ producteur.nom }}</strong></p>
+        {% else %}
+            <p> Bienvenue chez <strong>{{ producteur.nomdelentreprise }} - {{ producteur.prenom }} {{ producteur.nom }}</strong></p>
+        {% endif %}
+
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Description
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>{{ producteur.description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Information administrative
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p>
+                            Adresse: {{ producteur.adresse }}
+                            <br>
+                            telephone: {{ producteur.telephone }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Mes produits
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div style="background-color: red; display: flex; flex-wrap: wrap;">
+                            <div style="width: 100%; text-align: center; margin-top: 10px;">
+                                <h4>Légumes</h4>
+                            </div>
+                            {% for pdt in cesProduits %}
+                                {% if pdt.type == "legume" %}
+                                    <div class="card" style="background-color: #5eb5e0; width: 30%; margin: 10px;">
+                                        <img src="grathis"  class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p><strong>{{ pdt.nom }}</strong></p>
+                                            <br>
+                                            <p>
+                                                Quantité: {{ pdt.quantite }}
+                                                <br>
+                                                Prix: {{ pdt.prix }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <div style="width: 100%; text-align: center; margin-top: 100px;">
+                                <h4>Fruit</h4>
+                            </div>
+                            {% for pdt in cesProduits %}
+                                {% if pdt.type == "fruit" %}
+                                    <div class="card" style="width: 30%; margin: 10px; border-color: limegreen">
+                                        <img src="grathis"  class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p><strong>{{ pdt.nom }}</strong></p>
+                                            <br>
+                                            <p>
+                                                Quantité: {{ pdt.quantite }}
+                                                <br>
+                                                Prix: {{ pdt.prix }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <div style="width: 100%; text-align: center; margin-top: 100px;">
+                                <h4>Viande</h4>
+                            </div>
+                            {% for pdt in cesProduits %}
+                                {% if pdt.type == "viande" %}
+                                    <div class="card" style="width: 30%; margin: 10px;">
+                                        <img src="grathis"  class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p><strong>{{ pdt.nom }}</strong></p>
+                                            <br>
+                                            <p>
+                                                Quantité: {{ pdt.quantite }}
+                                                <br>
+                                                Prix: {{ pdt.prix }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <div style="width: 100%; text-align: center; margin-top: 100px;">
+                                <h4>Poisson</h4>
+                            </div>
+                            {% for pdt in cesProduits %}
+                                {% if pdt.type == "poisson" %}
+                                    <div class="card" style="width: 30%; margin: 10px;">
+                                        <img src="grathis"  class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p><strong>{{ pdt.nom }}</strong></p>
+                                            <br>
+                                            <p>
+                                                Quantité: {{ pdt.quantite }}
+                                                <br>
+                                                Prix: {{ pdt.prix }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
