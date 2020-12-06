@@ -196,6 +196,86 @@ class AppFixtures extends Fixture
 
         $manager->persist($Produit6);
 
+        $Produit7=new Produit();
+        $Produit7->setNom('maquereau');
+        $Produit7->setDescription('Aucune description');
+        $Produit7->setType('poisson');
+        $Produit7->setQuantite('5');
+        $Produit7->setPrix('10');
+        $Produit7->setProducteur($Producteur2);
+
+        $manager->persist($Produit7);
+
+        $Produit8=new Produit();
+        $Produit8->setNom('moule');
+        $Produit8->setDescription('Aucune description');
+        $Produit8->setType('fruit de mer');
+        $Produit8->setQuantite('50');
+        $Produit8->setPrix('2');
+        $Produit8->setProducteur($Producteur2);
+
+        $manager->persist($Produit8);
+
+        $Produit9=new Produit();
+        $Produit9->setNom('huître');
+        $Produit9->setDescription('Aucune description');
+        $Produit9->setType('fruit de mer');
+        $Produit9->setQuantite('12');
+        $Produit9->setPrix('5');
+        $Produit9->setProducteur($Producteur2);
+
+        $manager->persist($Produit9);
+
+        $Produit10=new Produit();
+        $Produit10->setNom('coquille saint-jacques');
+        $Produit10->setDescription('Aucune description');
+        $Produit10->setType('fruit de mer');
+        $Produit10->setQuantite('5');
+        $Produit10->setPrix('6');
+        $Produit10->setProducteur($Producteur2);
+
+        $manager->persist($Produit10);
+
+        $Produit11=new Produit();
+        $Produit11->setNom('saint-nectaire');
+        $Produit11->setDescription('Aucune description');
+        $Produit11->setType('fromage');
+        $Produit11->setQuantite('5');
+        $Produit11->setPrix('64');
+        $Produit11->setProducteur($Producteur8);
+
+        $manager->persist($Produit11);
+
+        $Produit11=new Produit();
+        $Produit11->setNom('reblochon');
+        $Produit11->setDescription('Aucune description');
+        $Produit11->setType('fromage');
+        $Produit11->setQuantite('5');
+        $Produit11->setPrix('64');
+        $Produit11->setProducteur($Producteur8);
+
+        $manager->persist($Produit11);
+
+        $Produit12=new Produit();
+        $Produit12->setNom('chipolatas de poulet');
+        $Produit12->setDescription('Aucune description');
+        $Produit12->setType('viande');
+        $Produit12->setQuantite('5');
+        $Produit12->setPrix('64');
+        $Produit12->setProducteur($Producteur7);
+
+        $manager->persist($Produit12);
+
+        $Produit13=new Produit();
+        $Produit13->setNom('boudin noir de porc');
+        $Produit13->setDescription('Aucune description');
+        $Produit13->setType('viande');
+        $Produit13->setQuantite('5');
+        $Produit13->setPrix('64');
+        $Produit13->setProducteur($Producteur7);
+
+        $manager->persist($Produit13);
+
 
 
         $manager->flush();
