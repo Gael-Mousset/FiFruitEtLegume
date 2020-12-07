@@ -3,8 +3,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Produit;
-use phpDocumentor\Reflection\Types\Array_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -63,6 +61,13 @@ class ProducteurController extends AbstractController
             }
         }
 
+        $listeFruitDeMer= array();
+        foreach ($listeProduits as $unProduit){
+            if($unProduit->getType()=="fruit de mer"){
+                $listeFruitDeMer[] = $unProduit;
+            }
+        }
+
         return $this->render('Producteur/detailProducteur.html.twig', [
             'controller_name' => 'DetailProducteurController',
             'producteur' => $producteurChoisi,
@@ -71,6 +76,7 @@ class ProducteurController extends AbstractController
             'cesFruits' => $listeFruits,
             'cesViandes' => $listeViandes,
             'cesPoissons' => $listePoissons,
+            'cesFruitDeMer' => $listeFruitDeMer
         ]);
     }
 

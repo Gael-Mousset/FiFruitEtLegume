@@ -12,11 +12,12 @@
         }
         a:hover{color: #44a044}
     </style>
+
     <div class="example-wrapper">
         <h1>Liste des producteurs</h1>
         {% for pdct in producteurs %}
             <div class="media" style="background-color: #fff3ea">
-                <img src="{{ pdct.photo }}"  class="mr-3" alt="">
+                <img src="{{ pdct.photo }}"  class="align-self-center mr-3 rounded-circle" alt="" style="height: 150px; width: 150px; background-size: cover;">
                 <div class="media-body">
                     <h5>{{ pdct.nomdelentreprise }} <br>
                         <a class="navbar-brand" href="/detailproducteur/{{ pdct.id }}">
@@ -25,42 +26,6 @@
                     </h5>
                     <p>{{ pdct.description }}</p>
                     <p>tel: {{ pdct.telephone }}</p>
-                    <div style="display: flex; background-color: #5eb5e0; flex-wrap: wrap">
-                        <div class="card" style="width: 30%;">
-                            <img src="grathis"  class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ pdct.nom }}</h5>
-                                <p class="card-text">prix</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 30%;">
-                            <img src="grathis"  class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ pdct.nom }}</h5>
-                                <p class="card-text">prix</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 30%;">
-                            <img src="grathis"  class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ pdct.nom }}</h5>
-                                <p class="card-text">prix</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 30%;">
-                            <img src="grathis"  class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ pdct.nom }}</h5>
-                                <p class="card-text">prix</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
             <br>

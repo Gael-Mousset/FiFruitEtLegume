@@ -144,6 +144,27 @@
                                 {% endfor %}
                             </div>
                         {% endif %}
+                        {% if not cesFruitDeMer == null %}
+                            <div style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 100%; text-align: center; margin-top: 25px;">
+                                    <h4>Fruit de mer</h4>
+                                </div>
+                                {% for unFruitDeMer in cesFruitDeMer %}
+                                    <div class="card" style="width: 30%; margin: 10px;">
+                                        <img src="grathis"  class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p><strong>{{ unFruitDeMer.nom }}</strong></p>
+                                            <br>
+                                            <p>
+                                                Quantité: {{ unFruitDeMer.quantite }}
+                                                <br>
+                                                Prix: {{ unFruitDeMer.prix }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
