@@ -41,7 +41,7 @@ class AppFixtures extends Fixture
         $Producteur3->setDescription('Aucune description');
         $Producteur3->setAdresse('9 rue des filegume, 17300 Rochefort');
         $Producteur3->setTelephone('0600000002');
-        $Producteur3->setPhoto('grathis');
+        $Producteur3->setPhoto('https://www.sante-sur-le-net.com/wp-content/uploads/2018/07/fraise-sante.jpg');
 
         $manager->persist($Producteur3);
 
