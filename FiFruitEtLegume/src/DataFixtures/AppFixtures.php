@@ -142,6 +142,7 @@ class AppFixtures extends Fixture
         $Produit1->setType('legume');
         $Produit1->setQuantite('12');
         $Produit1->setPrix('3');
+        $Produit1->setPhoto('carot.png');
         $Produit1->setProducteur($Producteur1);
 
         $manager->persist($Produit1);
@@ -152,6 +153,7 @@ class AppFixtures extends Fixture
         $Produit2->setType('legume');
         $Produit2->setQuantite('13');
         $Produit2->setPrix('5');
+        $Produit2->setPhoto('https://img-3.journaldesfemmes.fr/ov22esa_6QehxsFs7mi2QtdfFOE=/910x607/smart/46dbda9272fb4f74bb89fda8c58f61b1/ccmcms-jdf/10659242.jpg');
         $Produit2->setProducteur($Producteur1);
 
         $manager->persist($Produit2);
@@ -162,6 +164,7 @@ class AppFixtures extends Fixture
         $Produit3->setType('legume');
         $Produit3->setQuantite('5');
         $Produit3->setPrix('5');
+        $Produit3->setPhoto('grathis');
         $Produit3->setProducteur($Producteur1);
 
         $manager->persist($Produit3);
@@ -172,6 +175,7 @@ class AppFixtures extends Fixture
         $Produit4->setType('legume');
         $Produit4->setQuantite('5');
         $Produit4->setPrix('5');
+        $Produit4->setPhoto('https://cdn3.fermedesaintemarthe.com/I-Autre-24902_1200x1200-aubergine-black-beauty-ab.net.jpg');
         $Produit4->setProducteur($Producteur1);
 
         $manager->persist($Produit4);
@@ -182,6 +186,7 @@ class AppFixtures extends Fixture
         $Produit5->setType('fruit');
         $Produit5->setQuantite('9');
         $Produit5->setPrix('2');
+        $Produit5->setPhoto('https://www.sante-sur-le-net.com/wp-content/uploads/2018/07/fraise-sante.jpg');
         $Produit5->setProducteur($Producteur1);
 
         $manager->persist($Produit5);
@@ -192,6 +197,7 @@ class AppFixtures extends Fixture
         $Produit6->setType('poisson');
         $Produit6->setQuantite('2');
         $Produit6->setPrix('15');
+        $Produit6->setPhoto('grathis');
         $Produit6->setProducteur($Producteur2);
 
         $manager->persist($Produit6);
@@ -202,6 +208,7 @@ class AppFixtures extends Fixture
         $Produit7->setType('poisson');
         $Produit7->setQuantite('5');
         $Produit7->setPrix('10');
+        $Produit7->setPhoto('grathis');
         $Produit7->setProducteur($Producteur2);
 
         $manager->persist($Produit7);
@@ -212,6 +219,7 @@ class AppFixtures extends Fixture
         $Produit8->setType('fruit de mer');
         $Produit8->setQuantite('50');
         $Produit8->setPrix('2');
+        $Produit8->setPhoto('grathis');
         $Produit8->setProducteur($Producteur2);
 
         $manager->persist($Produit8);
@@ -222,6 +230,7 @@ class AppFixtures extends Fixture
         $Produit9->setType('fruit de mer');
         $Produit9->setQuantite('12');
         $Produit9->setPrix('5');
+        $Produit9->setPhoto('grathis');
         $Produit9->setProducteur($Producteur2);
 
         $manager->persist($Produit9);
@@ -232,6 +241,7 @@ class AppFixtures extends Fixture
         $Produit10->setType('fruit de mer');
         $Produit10->setQuantite('5');
         $Produit10->setPrix('6');
+        $Produit10->setPhoto('grathis');
         $Produit10->setProducteur($Producteur2);
 
         $manager->persist($Produit10);
@@ -242,19 +252,21 @@ class AppFixtures extends Fixture
         $Produit11->setType('fromage');
         $Produit11->setQuantite('5');
         $Produit11->setPrix('64');
+        $Produit11->setPhoto('https://www.fromagesdelamemee.fr/cache/images/product/0e2b51bbc8d304c86a2a135f09a5ebca-vente-fromage-saint-nectaire-laitier-laqueuille-la-memee-aopdsc_2029-72.jpg');
         $Produit11->setProducteur($Producteur8);
 
         $manager->persist($Produit11);
 
-        $Produit11=new Produit();
-        $Produit11->setNom('reblochon');
-        $Produit11->setDescription('Aucune description');
-        $Produit11->setType('fromage');
-        $Produit11->setQuantite('5');
-        $Produit11->setPrix('64');
-        $Produit11->setProducteur($Producteur8);
+        $Produit14=new Produit();
+        $Produit14->setNom('reblochon');
+        $Produit14->setDescription('Aucune description');
+        $Produit14->setType('fromage');
+        $Produit14->setQuantite('5');
+        $Produit14->setPrix('64');
+        $Produit14->setPhoto('https://cdn.shopify.com/s/files/1/0080/6482/7471/products/FromageDeMontagne_Reblochon_L2_aa28d8c0-fc99-4c5d-a2f4-9957bd5fb53a_1024x1024@2x.jpg?v=1557922738');
+        $Produit14->setProducteur($Producteur8);
 
-        $manager->persist($Produit11);
+        $manager->persist($Produit14);
 
         $Produit12=new Produit();
         $Produit12->setNom('chipolatas de poulet');
@@ -262,6 +274,7 @@ class AppFixtures extends Fixture
         $Produit12->setType('viande');
         $Produit12->setQuantite('5');
         $Produit12->setPrix('64');
+        $Produit12->setPhoto('https://pictures.renmans.be/sites/default/files/bddi/images/products/628/BELU-628-PLA-BEFR-374.jpg');
         $Produit12->setProducteur($Producteur7);
 
         $manager->persist($Produit12);
@@ -272,6 +285,7 @@ class AppFixtures extends Fixture
         $Produit13->setType('viande');
         $Produit13->setQuantite('5');
         $Produit13->setPrix('64');
+        $Produit13->setPhoto('https://www.concept-epices.fr/Image/5095/800x800/image.jpg');
         $Produit13->setProducteur($Producteur7);
 
         $manager->persist($Produit13);

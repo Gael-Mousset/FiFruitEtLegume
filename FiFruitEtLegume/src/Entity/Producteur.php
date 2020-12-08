@@ -55,7 +55,7 @@ class Producteur
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=1500, nullable=true)
      */
     private $photo;
 

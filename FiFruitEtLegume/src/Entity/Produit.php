@@ -33,12 +33,12 @@ class Produit
     private $type;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $quantite;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $prix;
 
@@ -47,6 +47,11 @@ class Produit
      * @ORM\JoinColumn(nullable=false)
      */
     private $producteur;
+
+    /**
+     * @ORM\Column(type="string", length=2000, nullable=true)
+     */
+    private $photo;
 
     public function getId(): int
     {
@@ -89,7 +94,7 @@ class Produit
         return $this;
     }
 
-    public function getQuantite(): int
+    public function getQuantite(): float
     {
         return $this->quantite;
     }
@@ -101,7 +106,7 @@ class Produit
         return $this;
     }
 
-    public function getPrix(): int
+    public function getPrix(): float
     {
         return $this->prix;
     }
@@ -121,6 +126,18 @@ class Produit
     public function setProducteur(?Producteur $producteur): self
     {
         $this->producteur = $producteur;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?string $photo): self
+    {
+        $this->photo = $photo;
 
         return $this;
     }
