@@ -6,11 +6,12 @@
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 
         a{
-            outline: none;
-            text-decoration: none;
-            color: black;
+            color: darkgrey;
         }
-        a:hover{color: #44a044}
+        a:hover{
+            color: limegreen;
+        }
+
         .image {
             background-size: cover;
             width: 150px;
@@ -26,12 +27,22 @@
         <h1>Liste des producteurs</h1>
         {% for pdct in producteurs %}
             <div class="media" style="background-color: #fff3ea">
-                <div class="image mr-3 rounded-circle" style="background-image:url({{ pdct.photo }})"><img src="{{ pdct.photo }}" alt="" /></div>
+                <div>
+                    <div class="image mr-3 rounded-circle" style="background-image:url({{ pdct.photo }}); margin-top: 15px;">
+                        <img src="{{ pdct.photo }}" alt="" />
+                    </div>
+                    <div style="text-align: center; width: 150px; margin-top: 10px">
+                        <img src="location-icon" alt="" style="width: 30px; height: 30px; margin-right: -10px"/>
+                        <a style="font-size: 15px; text-decoration: underline;" href="/">Situer sur la carte</a>
+                        <br>
+                        <a class="btn btn-success my-2 my-sm-0" role="button" href="/detailproducteur/{{ pdct.id }}" >Voir détails</a>
+                    </div>
+                </div>
+
                 <div class="media-body">
-                    <h5>{{ pdct.nomdelentreprise }} <br>
-                        <a class="navbar-brand" href="/detailproducteur/{{ pdct.id }}">
-                            {{ pdct.nom}} {{ pdct.prenom }}
-                        </a>
+                    <h5>{{ pdct.nomdelentreprise }}
+                        <br>
+                        {{ pdct.nom}} {{ pdct.prenom }}
                     </h5>
                     <p>{{ pdct.description }}</p>
                     <p>tel: {{ pdct.telephone }}</p>
