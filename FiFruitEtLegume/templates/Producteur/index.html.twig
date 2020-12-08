@@ -24,14 +24,15 @@
     </style>
 
     <div class="example-wrapper">
-        <h1>Liste des producteurs</h1>
+
+        <br>
         {% for pdct in producteurs %}
-            <div class="media" style="background-color: #fff3ea">
+            <div class="media shadow-lg p-3 mb-5 bg-white rounded">
                 <div>
-                    <div class="image mr-3 rounded-circle" style="background-image:url({{ pdct.photo }}); margin-top: 15px;">
+                    <div class="image mr-3 rounded-circle" style="background-image:url({{ pdct.photo }}); margin-top: 15px; margin-left: 15px">
                         <img src="{{ pdct.photo }}" alt="" />
                     </div>
-                    <div style="text-align: center; width: 150px; margin-top: 10px">
+                    <div style=" width: 150px; margin-top: 10px; text-align: center">
                         <img src="location-icon" alt="" style="width: 30px; height: 30px; margin-right: -10px"/>
                         <a style="font-size: 15px; text-decoration: underline;" href="/">Situer sur la carte</a>
                         <br>
@@ -39,9 +40,12 @@
                     </div>
                 </div>
 
-                <div class="media-body">
-                    <h5>{{ pdct.nomdelentreprise }}
-                        <br>
+                <div class="media-body" style="margin-left: 20px">
+                    <h5>
+                        {% if not pdct.nomdelentreprise == null %}
+                            {{ pdct.nomdelentreprise }}
+                            <br>
+                        {% endif %}
                         {{ pdct.nom}} {{ pdct.prenom }}
                     </h5>
                     <p>{{ pdct.description }}</p>
