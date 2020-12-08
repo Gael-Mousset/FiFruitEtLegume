@@ -1,27 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Page d'acceuil{% endblock %}
+{% block title %}Page des produits{% endblock %}
 
 {% block body %}
     <style>
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .example-wrapper code { background: #F5F5F5;  }
         .wrapper-produits { width: 100%; display: flex; flex-flow: row; flex-wrap: wrap;
-            justify-content: space-between;}
-        .card { width: 20em; max-height: 30%; border-width: 2px; border-color: black; }
+            justify-content: space-between; align-items: flex-start;}
+        .card { width: 15em; border-width: 2px; border-color: black; margin: 5px;}
+        .card-body { background-color: #1b9448; border-width: 2px; border-color: black;}
+        .card-body a { width: 100% }
     </style>
 
     <div class="example-wrapper">
         <h1>Bienvenue dans la page des produits</h1>
     </div>
     <div class="wrapper-produits">
+
+        <div class="card shadow rounded" >
+            <img src="grathis" class="image card-img-top" alt="error">
+            <div class="card-body">
+                <h5 class="card-title">test</h5>
+                <p class="card-text">prix : 1 €</p>
+                <a href="/produit/1" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
         {% for prd in produits %}
-            <div class="card" >
-                <img src="carot.png" class="card-img-top" alt="...">
-                <div class="card-body" style="background-color: #1b9448;">
+            <div class="card shadow rounded" >
+                <img src="carot.png" class="card-img-top" alt="error">
+                <div class="card-body">
                     <h5 class="card-title">{{ prd.nom }}</h5>
                     <p class="card-text">prix : {{ prd.prix }} €</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="/produit/{{ prd.nom }}" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         {% endfor %}
