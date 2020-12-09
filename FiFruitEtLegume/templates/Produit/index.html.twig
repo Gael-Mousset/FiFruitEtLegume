@@ -27,20 +27,10 @@
     </div>
     <div class="wrapper-produits">
 
-        <div class="card shadow rounded" >
-            <div class="image mr-3" style="background-image:url(grathis);">
-                <img src="grathis" alt="" />
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">test</h5>
-                <p class="card-text">prix : 1 €</p>
-                <a href="/produit/1" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-
         {% for prd in produits %}
             <div class="card shadow rounded" >
-                <img src="{{ prd.photo }}" class="card-img-top" alt="error">
+                <div class="image mr-3" style="background-image:url({{ prd.photo }});">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ prd.nom }}</h5>
                     <p class="card-text">prix : {{ prd.prix }} €</p>
