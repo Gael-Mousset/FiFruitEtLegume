@@ -1,14 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Page d'acceuil{% endblock %}
+{% block title %}Detail {{ produit.nom }}{% endblock %}
 
 {% block body %}
 <style>
     .example-wrapper { margin: 1em auto;  width: 100%; font: 18px/1.5 sans-serif; }
+    .exemple-wrapper h1 { margin:auto; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
     .wrapper {display: flex; flex-direction: row; }
     .presentation {display: flex; flex-direction: column; width: 20%; margin: 1em;}
-    .presentation .image { margin: auto; width: 10em; height: 10em;}
+    /*.presentation .image { margin: auto; width: 10em; height: 10em;}*/
     .nom {margin: auto; padding-top: 5px; }
     .info {margin: 5px; padding-left: 20px }
 
@@ -24,7 +25,6 @@
         background-size: cover;
         width: 5em;
         height: 5em;
-        margin: auto;
         background-image:url({{ producteur.photo }});
     }
 
@@ -38,15 +38,17 @@
             <div class="imageProduit mr-3 rounded-circle" ></div>
 
             <div class="nom">
-                <h3>{{ produit.nom }}</h3>
+                <h2>{{ produit.nom }}</h2>
             </div>
         </div>
         <div class="info">
             <div class="imageProfil mr-3 rounded-circle" ></div>
 
-            <p>Le producteur {{ producteur.prenom }} {{ producteur.nom}} a ramasser ce légume à {{ producteur.adresse }}.</p>
-            <a href="/detailproducteur/{{ producteur.id }}" class="btn btn-primary">Voir producteur</a>
-            <h5>Prix : {{ produit.prix }} €</h5>
+            <p>Le producteur {{ producteur.prenom }} {{ producteur.nom}} a ramasser ce {{ produit.type }} à {{ producteur.adresse }}.</p>
+            <a href="/detailproducteur/{{ producteur.id }}" class="btn btn-success">Voir producteur</a>
+            <p>{{ produit.description }}</p>
+            <h5>Quantitée : {{ produit.quantite }}</h5>
+            <h4>Prix : {{ produit.prix }} €</h4>
         </div>
     </div>
 </div>
