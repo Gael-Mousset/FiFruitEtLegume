@@ -5,6 +5,18 @@
         .example-wrapper { margin: 1em auto;
             font: 18px/1.5 sans-serif; }
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+        .card #produit{ width: 15em; margin: 5px;}
+        .card-body #produit a { width: 100%; background-color: #44a044 }
+        .image {
+            background-size: cover;
+            width: 100%;
+            height: 15em;
+        }
+
+        .image img {
+            display: none;
+        }
     </style>
     <div class="example-wrapper">
         <br>
@@ -14,7 +26,7 @@
             <p> Bienvenue chez <strong>{{ producteur.nomdelentreprise }} - {{ producteur.prenom }} {{ producteur.nom }}</strong></p>
         {% endif %}
 
-        <img src="grathis"  class="card-img-top" alt="...">
+        <img src="{{ asset(producteur.photo) }}"  class="d-inline-block align-top" alt="...">
 
         <div class="accordion" id="accordionExample">
             <div class="card">
@@ -61,21 +73,18 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
                         {% if not cesLegumes == null %}
-                            <div style="background-color: red; display: flex; flex-wrap: wrap;">
+                            <div style="display: flex; flex-wrap: wrap;">
                                 <div style="width: 100%; text-align: center; margin-top: 25px;">
                                     <h4>Légumes</h4>
                                 </div>
                                 {% for unLegume in cesLegumes %}
-                                    <div class="card" style="width: 30%; margin: 10px;">
-                                        <img src="grathis"  class="card-img-top" alt="...">
+                                    <div class="card shadow-lg rounded" id="produit">
+                                        <div class="image mr-3" style="background-image:url({{ unLegume.photo }});">
+                                        </div>
                                         <div class="card-body">
-                                            <p><strong>{{ unLegume.nom }}</strong></p>
-                                            <br>
-                                            <p>
-                                                Quantité: {{ unLegume.quantite }}
-                                                <br>
-                                                Prix: {{ unLegume.prix }}
-                                            </p>
+                                            <h5 class="card-title">{{ unLegume.nom }}</h5>
+                                            <p class="card-text">prix : {{ unLegume.prix }} €</p>
+                                            <a href="/produit/{{ unLegume.nom }}" class="btn btn-primary">Go somewhere</a>
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -87,16 +96,13 @@
                                     <h4>Fruit</h4>
                                 </div>
                                 {% for unFruit in cesFruits %}
-                                    <div class="card" style="width: 30%; margin: 10px;">
-                                        <img src="grathis"  class="card-img-top" alt="...">
+                                    <div class="card shadow-lg rounded" id="produit">
+                                        <div class="image mr-3" style="background-image:url({{ unFruit.photo }});">
+                                        </div>
                                         <div class="card-body">
-                                            <p><strong>{{ unFruit.nom }}</strong></p>
-                                            <br>
-                                            <p>
-                                                Quantité: {{ unFruit.quantite }}
-                                                <br>
-                                                Prix: {{ unFruit.prix }}
-                                            </p>
+                                            <h5 class="card-title">{{ unFruit.nom }}</h5>
+                                            <p class="card-text">prix : {{ unFruit.prix }} €</p>
+                                            <a href="/produit/{{ unFruit.nom }}" class="btn btn-primary">Go somewhere</a>
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -108,18 +114,15 @@
                                     <h4>Viande</h4>
                                 </div>
                                 {% for uneViande in cesViandes %}
-                                        <div class="card" style="width: 30%; margin: 10px;">
-                                            <img src="grathis"  class="card-img-top" alt="...">
-                                            <div class="card-body">
-                                                <p><strong>{{ uneViande.nom }}</strong></p>
-                                                <br>
-                                                <p>
-                                                    Quantité: {{ uneViande.quantite }}
-                                                    <br>
-                                                    Prix: {{ uneViande.prix }}
-                                                </p>
-                                            </div>
+                                    <div class="card shadow-lg rounded" id="produit">
+                                        <div class="image mr-3" style="background-image:url({{ uneViande.photo }});">
                                         </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ uneViande.nom }}</h5>
+                                            <p class="card-text">prix : {{ uneViande.prix }} €</p>
+                                            <a href="/produit/{{ uneViande.nom }}" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
                                 {% endfor %}
                             </div>
                         {% endif %}
@@ -129,16 +132,13 @@
                                     <h4>Poisson</h4>
                                 </div>
                                 {% for unPoisson in cesPoissons %}
-                                    <div class="card" style="width: 30%; margin: 10px;">
-                                        <img src="grathis"  class="card-img-top" alt="...">
+                                    <div class="card shadow-lg rounded" id="produit">
+                                        <div class="image mr-3" style="background-image:url({{ unPoisson.photo }});">
+                                        </div>
                                         <div class="card-body">
-                                            <p><strong>{{ unPoisson.nom }}</strong></p>
-                                            <br>
-                                            <p>
-                                                Quantité: {{ unPoisson.quantite }}
-                                                <br>
-                                                Prix: {{ unPoisson.prix }}
-                                            </p>
+                                            <h5 class="card-title">{{ unPoisson.nom }}</h5>
+                                            <p class="card-text">prix : {{ unPoisson.prix }} €</p>
+                                            <a href="/produit/{{ unPoisson.nom }}" class="btn btn-primary">Go somewhere</a>
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -150,16 +150,31 @@
                                     <h4>Fruit de mer</h4>
                                 </div>
                                 {% for unFruitDeMer in cesFruitDeMer %}
-                                    <div class="card" style="width: 30%; margin: 10px;">
-                                        <img src="grathis"  class="card-img-top" alt="...">
+                                    <div class="card shadow-lg rounded" id="produit">
+                                        <div class="image mr-3" style="background-image:url({{ unFruitDeMer.photo }});">
+                                        </div>
                                         <div class="card-body">
-                                            <p><strong>{{ unFruitDeMer.nom }}</strong></p>
-                                            <br>
-                                            <p>
-                                                Quantité: {{ unFruitDeMer.quantite }}
-                                                <br>
-                                                Prix: {{ unFruitDeMer.prix }}
-                                            </p>
+                                            <h5 class="card-title">{{ unFruitDeMer.nom }}</h5>
+                                            <p class="card-text">prix : {{ unFruitDeMer.prix }} €</p>
+                                            <a href="/produit/{{ unFruitDeMer.nom }}" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        {% if not cesFromages == null %}
+                            <div style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 100%; text-align: center; margin-top: 25px;">
+                                    <h4>Fromages</h4>
+                                </div>
+                                {% for unFromage in cesFromages %}
+                                    <div class="card shadow-lg rounded" id="produit">
+                                        <div class="image mr-3" style="background-image:url({{ unFromage.photo }});">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ unFromage.nom }}</h5>
+                                            <p class="card-text">prix : {{ unFromage.prix }} €</p>
+                                            <a href="/produit/{{ unFromage.nom }}" class="btn btn-primary">Go somewhere</a>
                                         </div>
                                     </div>
                                 {% endfor %}

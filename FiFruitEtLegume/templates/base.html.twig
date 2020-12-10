@@ -5,13 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" href="Logo">
+        <link rel="icon" href="{{ asset('Logo') }}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
     <nav class="navbar navbar-expand-md navbar-light fixed-top " style="background-color: #44a044">
         <a class="navbar-brand" href="/">
-            <img src="Logo" width="50" height="50" class="d-inline-block align-top" alt="">
+            <img src="{{ asset('Logo') }}" width="50" height="50" class="d-inline-block align-top" alt="">
+            <!-- -->
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -59,8 +60,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </main>
     <footer class="page-footer" style="background-color: #44a044; display: flex;justify-content: space-between;">
-        <p style="margin-top: auto; margin-bottom: auto; ">© 2020-2021 Projet MPA-PWS </p>
-        <img src="Logo" width="50" height="50" class="d-inline-block align-top" alt="" style="position: absolute; left: 50%;">
+        <p style="margin-top: auto; margin-bottom: auto; margin-left: 10px">© 2020-2021 Projet MPA-PWS </p>
+        <img src="{{ asset('Logo') }}" width="50" height="50" class="d-inline-block align-top" alt="" style="position: absolute; left: 50%;">
         <ul style="margin-top: auto; margin-bottom: auto; list-style: none; ">
             <li style="margin-top: auto; margin-bottom: auto;">Contact : +330 00 00 00 01</li>
             <li style="margin-top: auto; margin-bottom: auto;">Adresse : 60, Cours Marechal-Joffre 76200 DIEPPE</li>

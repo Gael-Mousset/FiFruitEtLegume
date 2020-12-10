@@ -19,7 +19,7 @@ class AppFixtures extends Fixture
         $Producteur1->setDescription('jeune producteur, je souhaite vous faire découvrir ma passion à l"aide de mes produits cultivers avec soins.');
         $Producteur1->setAdresse('3 rue des accacias, 17430 Saint-Hippolyte');
         $Producteur1->setTelephone('0662378055');
-        $Producteur1->setPhoto('mathis');
+        $Producteur1->setPhoto('grathis');
         
         $manager->persist($Producteur1);
 
@@ -30,7 +30,7 @@ class AppFixtures extends Fixture
         $Producteur2->setDescription('salut c"est Romain. salut c"est Romain. salut c"est Romain. salut c"est Romain. salut c"est Romain. salut c"est Romain. salut c"est Romain. salut c"est Romain. ');
         $Producteur2->setAdresse('6 rue des fifruit, 17000 La Rochelle');
         $Producteur2->setTelephone('0600000001');
-        $Producteur2->setPhoto('fruits-legumes.png');
+        $Producteur2->setPhoto('https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Fromain6107&psig=AOvVaw2jnPaA1HMNuAeUTEjT6_sU&ust=1607678772877000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKiloqiMw-0CFQAAAAAdAAAAABAE');
 
         $manager->persist($Producteur2);
 
@@ -52,7 +52,7 @@ class AppFixtures extends Fixture
         $Producteur4->setDescription('Aucune description');
         $Producteur4->setAdresse('8 rue Charles de Gaulle, 17440 Aytré');
         $Producteur4->setTelephone('0600000003');
-        $Producteur4->setPhoto('grathis');
+        $Producteur4->setPhoto('https://www.monpetitcoinvert.com/blog/wp-content/uploads/2019/03/potager-2-1-600x420.jpg');
 
         $manager->persist($Producteur4);
 
@@ -63,7 +63,7 @@ class AppFixtures extends Fixture
         $Producteur5->setDescription('Aucune description');
         $Producteur5->setAdresse('8 rue Louis Pasteur, 17320 Marenne');
         $Producteur5->setTelephone('0600000004');
-        $Producteur5->setPhoto('grathis');
+        $Producteur5->setPhoto('https://www.poettinger.at/img/landtechnik/newsletter/PRIMO_401_D_Lindner-6054.jpg');
 
         $manager->persist($Producteur5);
 
@@ -74,7 +74,7 @@ class AppFixtures extends Fixture
         $Producteur6->setDescription('Aucune description');
         $Producteur6->setAdresse('3 rue des accacias, 17200 Royan');
         $Producteur6->setTelephone('0600000005');
-        $Producteur6->setPhoto('grathis');
+        $Producteur6->setPhoto('https://static.aujardin.info/cache/th/img8/potager-carres-600x450.webp?1');
 
         $manager->persist($Producteur6);
 
@@ -96,7 +96,7 @@ class AppFixtures extends Fixture
         $Producteur8->setDescription('Aucune description');
         $Producteur8->setAdresse('3 rue Jules Ferry, 17430 Tonnay-Charente');
         $Producteur8->setTelephone('0600000007');
-        $Producteur8->setPhoto('grathis');
+        $Producteur8->setPhoto('https://www.orgaya.fr/get_square/253/data/producteur/portrait-cpfnj.png');
 
         $manager->persist($Producteur8);
 
@@ -107,7 +107,7 @@ class AppFixtures extends Fixture
         $Producteur9->setDescription('Aucune description');
         $Producteur9->setAdresse('17 Avenue Charles de Gaulle, 17450 Fouras');
         $Producteur9->setTelephone('0600000008');
-        $Producteur9->setPhoto('grathis');
+        $Producteur9->setPhoto('https://france3-regions.francetvinfo.fr/image/g616OgE97ftCKGg6Whj4GASXc5A/930x620/regions/2020/06/09/5edef726d260b_xavierbeulin-2911823.jpg');
 
         $manager->persist($Producteur9);
 
@@ -142,7 +142,7 @@ class AppFixtures extends Fixture
         $Produit1->setType('legume');
         $Produit1->setQuantite('12');
         $Produit1->setPrix('3');
-        $Produit1->setPhoto('carot.png');
+        $Produit1->setPhoto('https://static.750g.com/images/600-400/bc0666bc4882e60db2a3ba88b5a87772/300772.jpg');
         $Produit1->setProducteur($Producteur1);
 
         $manager->persist($Produit1);
@@ -164,7 +164,7 @@ class AppFixtures extends Fixture
         $Produit3->setType('legume');
         $Produit3->setQuantite('5');
         $Produit3->setPrix('5');
-        $Produit3->setPhoto('grathis');
+        $Produit3->setPhoto('https://media.ooreka.fr/public/image/4-oignons-rouges-full-12916821.jpg');
         $Produit3->setProducteur($Producteur1);
 
         $manager->persist($Produit3);
@@ -197,7 +197,7 @@ class AppFixtures extends Fixture
         $Produit6->setType('poisson');
         $Produit6->setQuantite('2');
         $Produit6->setPrix('15');
-        $Produit6->setPhoto('grathis');
+        $Produit6->setPhoto('https://www.poisson-livreur.fr/categorie/330842062cabillaud.jpg');
         $Produit6->setProducteur($Producteur2);
 
         $manager->persist($Produit6);
@@ -208,7 +208,7 @@ class AppFixtures extends Fixture
         $Produit7->setType('poisson');
         $Produit7->setQuantite('5');
         $Produit7->setPrix('10');
-        $Produit7->setPhoto('grathis');
+        $Produit7->setPhoto('https://static.750g.com/images/600-400/cc688657ce56049ec195da0ddb79aba9/thinkstockphotos-595332948.jpg');
         $Produit7->setProducteur($Producteur2);
 
         $manager->persist($Produit7);
@@ -219,7 +219,7 @@ class AppFixtures extends Fixture
         $Produit8->setType('fruit de mer');
         $Produit8->setQuantite('50');
         $Produit8->setPrix('2');
-        $Produit8->setPhoto('grathis');
+        $Produit8->setPhoto('https://www.papillesetpupilles.fr/wp-content/uploads/2005/10/Moules-marinie%CC%80res-1-1150x0.jpg');
         $Produit8->setProducteur($Producteur2);
 
         $manager->persist($Produit8);
@@ -230,7 +230,7 @@ class AppFixtures extends Fixture
         $Produit9->setType('fruit de mer');
         $Produit9->setQuantite('12');
         $Produit9->setPrix('5');
-        $Produit9->setPhoto('grathis');
+        $Produit9->setPhoto('https://static.pourdebon.com/images/476-355/4807dbd60d03344a2612c3f4d63cb1b7/photo%2520bourriche%2520numero%25203.jpeg');
         $Produit9->setProducteur($Producteur2);
 
         $manager->persist($Produit9);
@@ -241,7 +241,7 @@ class AppFixtures extends Fixture
         $Produit10->setType('fruit de mer');
         $Produit10->setQuantite('5');
         $Produit10->setPrix('6');
-        $Produit10->setPhoto('grathis');
+        $Produit10->setPhoto('https://i-reg.unimedias.fr/sites/art-de-vivre/files/styles/large/public/coquille-saint-jacques_istock.jpg?auto=compress%2Cformat&crop=faces%2Cedges&cs=srgb&fit=crop');
         $Produit10->setProducteur($Producteur2);
 
         $manager->persist($Produit10);

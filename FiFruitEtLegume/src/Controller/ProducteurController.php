@@ -68,6 +68,13 @@ class ProducteurController extends AbstractController
             }
         }
 
+        $listeFromage= array();
+        foreach ($listeProduits as $unProduit){
+            if($unProduit->getType()=="fromage"){
+                $listeFromage[] = $unProduit;
+            }
+        }
+
         return $this->render('Producteur/detailProducteur.html.twig', [
             'controller_name' => 'DetailProducteurController',
             'producteur' => $producteurChoisi,
@@ -76,7 +83,8 @@ class ProducteurController extends AbstractController
             'cesFruits' => $listeFruits,
             'cesViandes' => $listeViandes,
             'cesPoissons' => $listePoissons,
-            'cesFruitDeMer' => $listeFruitDeMer
+            'cesFruitDeMer' => $listeFruitDeMer,
+            'cesFromages' => $listeFromage
         ]);
     }
 
