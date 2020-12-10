@@ -4,11 +4,32 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto;  width: 100%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .wrapper {display: flex; flex-direction: row; }
+    .presentation {display: flex; flex-direction: column; width: 20%; margin: 1em;}
+    .presentation .image { margin: auto; width: 10em; height: 10em;}
+    .info .image {margin: auto; width: 5em; height: 5em;}
+    .nom {margin: auto; padding-top: 5px; }
+    .info {margin: 5px; padding-left: 20px }
 </style>
 
 <div class="example-wrapper">
     <h1>Bienvenue dans la page de detail du produit</h1>
+
+    <div class="wrapper shadow-lg">
+        <div class="presentation">
+            <img src="{{ produit.photo }}" class="image mr-3 rounded-circle" >
+            <div class="nom">
+                <h3>{{ produit.nom }}</h3>
+            </div>
+        </div>
+        <div class="info">
+            <img src="{{ producteur.photo }}" class="image mr-3 rounded-circle" >
+            <p>Le producteur {{ producteur.prenom }} {{ producteur.nom}} a ramasser ce légume à {{ producteur.adresse }}.</p>
+            <a href="/detailproducteur/{{ producteur.id }}" class="btn btn-primary">Voir producteur</a>
+            <h5>Prix : {{ produit.prix }} €</h5>
+        </div>
+    </div>
 </div>
 {% endblock %}
