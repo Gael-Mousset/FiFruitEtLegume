@@ -2,12 +2,23 @@
 {% block title %}{{ producteur.prenom }} {{ producteur.nom }}{% endblock %}
 {% block body %}
     <style>
-        .example-wrapper { margin: 1em auto;
-            font: 18px/1.5 sans-serif; }
-        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        .example-wrapper {
+            margin: 1em auto;
+            font: 18px/1.5 sans-serif;
+        }
+        .example-wrapper code {
+            background: #F5F5F5; padding: 2px 6px;
+        }
 
-        .card #produit{ width: 15em; margin: 5px;}
-        .card-body #produit a { width: 100%; background-color: #44a044 }
+        .card #produit{
+            width: 15em;
+            margin: 15px;
+        }
+
+        .card-body #produit a {
+            width: 100%;
+        }
+
         .imageProduit {
             background-size: cover;
             width: 100%;
@@ -71,7 +82,9 @@
         .typeProduit{display: flex; flex-wrap: wrap;}
         .typeProduit .titre {width: 100%; text-align: center; margin-top: 25px;}
 
-        .accordion{margin-top: 10px;}
+        .accordion{
+            margin-top: 10px;
+        }
     </style>
     <div class="example-wrapper">
         <br>
@@ -158,7 +171,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">{{ unLegume.nom }}</h5>
                                             <p class="card-text">prix : {{ unLegume.prix }} €</p>
-                                            <a href="/produit/{{ unLegume.nom }}" class="btn btn-primary">Go somewhere</a>
+                                            <a href="/detailProduit/{{ unLegume.id }}" class="btn btn-success">Voir détails</a>
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -176,7 +189,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">{{ unFruit.nom }}</h5>
                                             <p class="card-text">prix : {{ unFruit.prix }} €</p>
-                                            <a href="/produit/{{ unFruit.nom }}" class="btn btn-primary">Go somewhere</a>
+                                            <a href="/detailProduit/{{ unFruit.id }}" class="btn btn-success">Voir détails</a>
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -194,7 +207,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">{{ uneViande.nom }}</h5>
                                             <p class="card-text">prix : {{ uneViande.prix }} €</p>
-                                            <a href="/produit/{{ uneViande.nom }}" class="btn btn-primary">Go somewhere</a>
+                                            <a href="/detailProduit/{{ uneViande.id }}" class="btn btn-success">Voir détails</a>
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -212,7 +225,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">{{ unPoisson.nom }}</h5>
                                             <p class="card-text">prix : {{ unPoisson.prix }} €</p>
-                                            <a href="/produit/{{ unPoisson.nom }}" class="btn btn-primary">Go somewhere</a>
+                                            <a href="/detailProduit/{{ unPoisson.id }}" class="btn btn-success">Voir détails</a>
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -230,7 +243,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">{{ unFruitDeMer.nom }}</h5>
                                             <p class="card-text">prix : {{ unFruitDeMer.prix }} €</p>
-                                            <a href="/produit/{{ unFruitDeMer.nom }}" class="btn btn-primary">Go somewhere</a>
+                                            <a href="/detailProduit/{{ unFruitDeMer.id }}" class="btn btn-success">Voir détails</a>
                                         </div>
                                     </div>
                                 {% endfor %}
@@ -248,7 +261,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title">{{ unFromage.nom }}</h5>
                                             <p class="card-text">prix : {{ unFromage.prix }} €</p>
-                                            <a href="/produit/{{ unFromage.nom }}" class="btn btn-primary">Go somewhere</a>
+                                            <a href="/detailProduit/{{ unFromage.id }}" class="btn btn-success">Voir détails</a>
                                         </div>
                                     </div>
                                 {% endfor %}
