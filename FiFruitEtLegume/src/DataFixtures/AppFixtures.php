@@ -19,7 +19,7 @@ class AppFixtures extends Fixture
         $Producteur1->setDescription('jeune producteur, je souhaite vous faire découvrir ma passion à l"aide de mes produits cultivers avec soins.');
         $Producteur1->setAdresse('3 rue des accacias, 17430 Saint-Hippolyte');
         $Producteur1->setTelephone('0662378055');
-        $Producteur1->setPhoto('grathis');
+        $Producteur1->setPhoto('https://cdn.discordapp.com/attachments/651778097825185804/783019682608316476/FaceApp_1606756816268.jpg');
         
         $manager->persist($Producteur1);
 
