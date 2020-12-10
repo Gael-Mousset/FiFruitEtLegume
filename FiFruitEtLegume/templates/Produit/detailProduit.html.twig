@@ -12,16 +12,22 @@
     .nom {margin: auto; padding-top: 5px; }
     .info {margin: 5px; padding-left: 20px }
 
+    .imageProduit{
+        background-size: cover;
+        width: 10em;
+        height: 10em;
+        margin: auto;
+        background-image:url({{ produit.photo }});
+    }
+
     .imageProfil {
         background-size: cover;
         width: 5em;
         height: 5em;
         margin: auto;
+        background-image:url({{ producteur.photo }});
     }
 
-    .imageProfil img{
-        display: none;
-    }
 </style>
 
 <div class="example-wrapper">
@@ -29,16 +35,15 @@
 
     <div class="wrapper shadow-lg">
         <div class="presentation">
-            <img src="{{ produit.photo }}" class="image mr-3 rounded-circle" >
+            <div class="imageProduit mr-3 rounded-circle" ></div>
 
             <div class="nom">
                 <h3>{{ produit.nom }}</h3>
             </div>
         </div>
         <div class="info">
-            <div class="imageProfil mr-3 rounded-circle" style="background-image:url({{ producteur.photo }});">
-                <img src="{{ producteur.photo }}" alt="" />
-            </div>
+            <div class="imageProfil mr-3 rounded-circle" ></div>
+
             <p>Le producteur {{ producteur.prenom }} {{ producteur.nom}} a ramasser ce légume à {{ producteur.adresse }}.</p>
             <a href="/detailproducteur/{{ producteur.id }}" class="btn btn-primary">Voir producteur</a>
             <h5>Prix : {{ produit.prix }} €</h5>
