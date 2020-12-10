@@ -19,7 +19,7 @@ class AppFixtures extends Fixture
         $Producteur1->setDescription('jeune producteur, je souhaite vous faire découvrir ma passion à l"aide de mes produits cultivers avec soins.');
         $Producteur1->setAdresse('3 rue des accacias, 17430 Saint-Hippolyte');
         $Producteur1->setTelephone('0662378055');
-        $Producteur1->setPhoto('grathis');
+        $Producteur1->setPhoto('https://cdn.discordapp.com/attachments/651778097825185804/783019682608316476/FaceApp_1606756816268.jpg');
         
         $manager->persist($Producteur1);
 
@@ -30,7 +30,7 @@ class AppFixtures extends Fixture
         $Producteur2->setDescription('salut c"est Romain. salut c"est Romain. salut c"est Romain. salut c"est Romain. salut c"est Romain. salut c"est Romain. salut c"est Romain. salut c"est Romain. ');
         $Producteur2->setAdresse('6 rue des fifruit, 17000 La Rochelle');
         $Producteur2->setTelephone('0600000001');
-        $Producteur2->setPhoto('https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Fromain6107&psig=AOvVaw2jnPaA1HMNuAeUTEjT6_sU&ust=1607678772877000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKiloqiMw-0CFQAAAAAdAAAAABAE');
+        $Producteur2->setPhoto('https://cdn.discordapp.com/attachments/689876665584845009/786557638217170954/Snapchat-1264765459.jpg');
 
         $manager->persist($Producteur2);
 

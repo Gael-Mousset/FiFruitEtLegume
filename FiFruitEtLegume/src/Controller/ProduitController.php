@@ -23,12 +23,18 @@ class ProduitController extends AbstractController
     }
 
     /**
-     * @Route("/detailproduit", name="detailproduit")
+     * @Route("/detailProduit/{id}", name="detailproduit")
      */
-    public function detailproduit()
+    public function detailproduit($id)
     {
+        $repository=$this->getDoctrine()->getManager()->getRepository('App\Entity\Produit');
+        $produitChoisi=$repository->find($id);
+
+        $producteurAssocie = $produitChoisi->getProducteur();
+
         return $this->render('Produit/detailProduit.html.twig', [
-            'controller_name' => 'DetailProduitController',
+            'produit' => $produitChoisi,
+            'producteur' => $producteurAssocie
         ]);
     }
 
