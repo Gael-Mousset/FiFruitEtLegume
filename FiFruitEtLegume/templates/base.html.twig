@@ -12,7 +12,6 @@
     <nav class="navbar navbar-expand-md navbar-light fixed-top " style="background-color: #44a044">
         <a class="navbar-brand" href="/">
             <img src="{{ asset('Logo') }}" width="50" height="50" class="d-inline-block align-top" alt="">
-            <!-- -->
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,7 +60,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="page-footer font-small pt-4" style="background-color: #5d4037; color: white; ">
+    <footer class="page-footer font-small pt-4" style="background-color: #5d4037; color: white; margin-top: -30px">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
@@ -75,7 +74,10 @@
                     <!-- Content -->
                     <h5 class="text-uppercase">FiFruitEtLegume</h5>
                     <p>Des Produit locaux pas porter d'un clic.</p>
-                    <img src="{{ asset('Logo') }}" width="150" height="150" class="d-inline-block align-top" alt="">
+                    <a href="/">
+                        <img src="{{ asset('Logo') }}" width="150" height="150" class="d-inline-block align-top" alt="">
+                    </a>
+
 
                 </div>
                 <!-- Grid column -->
@@ -90,16 +92,16 @@
 
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#!" style="color: white">Accueil</a>
+                            <a href="/" style="color: #ffffff">Accueil</a>
                         </li>
                         <li>
-                            <a href="#!" style="color: white">Producteurs</a>
+                            <a href="/producteur" style="color: white">Producteurs</a>
                         </li>
                         <li>
-                            <a href="#!" style="color: white">Produit</a>
+                            <a href="/produit" style="color: white">Produit</a>
                         </li>
                         <li>
-                            <a href="#!" style="color: white">Carte</a>
+                            <a href="/" style="color: white">Carte</a>
                         </li>
                     </ul>
 
