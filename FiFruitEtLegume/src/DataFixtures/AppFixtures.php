@@ -290,8 +290,41 @@ class AppFixtures extends Fixture
 
         $manager->persist($Produit13);
 
+        $Produit14=new Produit();
+        $Produit14->setNom('Carotte');
+        $Produit14->setDescription('Aucune description');
+        $Produit14->setType('legume');
+        $Produit14->setQuantite('9');
+        $Produit14->setPrix('2');
+        $Produit14->setPhoto('https://wordpress.potagercity.fr/wp-content/uploads/2019/03/produit-carotte.jpg');
+        $Produit14->setProducteur($Producteur4);
 
+        $manager->persist($Produit14);
+
+        $Produit15=new Produit();
+        $Produit15->setNom('Carotte');
+        $Produit15->setDescription('Aucune description');
+        $Produit15->setType('legume');
+        $Produit15->setQuantite('3');
+        $Produit15->setPrix('4');
+        $Produit15->setPhoto('https://cdn1.fermedesaintemarthe.com/I-Autre-26000_1200x1200-carotte-amsterdam-2-ab.net.jpg');
+        $Produit15->setProducteur($Producteur5);
+
+        $manager->persist($Produit15);
+
+        $Produit16=new Produit();
+        $Produit16->setNom('fraise');
+        $Produit16->setDescription('Aucune description');
+        $Produit16->setType('fruit');
+        $Produit16->setQuantite('6');
+        $Produit16->setPrix('4');
+        $Produit16->setPhoto('https://photos.gammvert.fr/v5/products/full/7658-fraise-cigoulette-2.jpeg');
+        $Produit16->setProducteur($Producteur2);
+
+        $manager->persist($Produit16);
 
         $manager->flush();
+
+        //executer php bin/console doctrine:fixtures:load pour mettre à jour la base de données
     }
 }

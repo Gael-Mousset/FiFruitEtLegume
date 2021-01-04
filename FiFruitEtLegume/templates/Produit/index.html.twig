@@ -18,20 +18,97 @@
     </style>
 
     <div class="example-wrapper">
-        <h1>Bienvenue dans la page des produits</h1>
+        <br><h1>Bienvenue dans la page des produits</h1><br><br>
     </div>
-    <div class="wrapper-produits">
 
-        {% for prd in produits %}
+    <!--L'espace des offres Légume -->
+    <h2>Légumes:</h2>
+    <br>
+    <div class="wrapper-produits">
+        {% for prd in legumes %}
             <div class="card shadow-lg rounded">
                 <div class="image mr-3" style="background-image:url({{ prd.photo }});">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ prd.nom }}</h5>
-                    <p class="card-text">prix : {{ prd.prix }} €</p>
+                    <p class="card-text">prix : {{ prd.prix }} €/kg </p>
                     <a href="/detailProduit/{{ prd.id }}" class="btn btn-success">Voir les details</a>
                 </div>
             </div>
         {% endfor %}
     </div>
+    <br>
+
+    <!--L'espace des offres Viande -->
+    <h2>Viande:</h2>
+    <br>
+    <div class="wrapper-produits">
+        {% for prd in viande %}
+            <div class="card shadow-lg rounded">
+                <div class="image mr-3" style="background-image:url({{ prd.photo }});">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ prd.nom }}</h5>
+                    <p class="card-text">prix : {{ prd.prix }} €/kg </p>
+                    <a href="/detailProduit/{{ prd.id }}" class="btn btn-success">Voir les details</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+
+    <!--L'espace des offres Fruits -->
+    <h2>Fruits:</h2>
+    <br>
+    <div class="wrapper-produits">
+        {% for prd in fruits %}
+            <div class="card shadow-lg rounded">
+                <div class="image mr-3" style="background-image:url({{ prd.photo }});">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ prd.nom }}</h5>
+                    <p class="card-text">prix : {{ prd.prix }} €/kg </p>
+                    <a href="/detailProduit/{{ prd.id }}" class="btn btn-success">Voir les details</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+
+    <!--L'espace des offres Fromage -->
+    <h2>Fromage:</h2>
+    <br>
+    <div class="wrapper-produits">
+        {% for prd in fromage %}
+            <div class="card shadow-lg rounded">
+                <div class="image mr-3" style="background-image:url({{ prd.photo }});">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ prd.nom }}</h5>
+                    <p class="card-text">prix : {{ prd.prix }} €/kg </p>
+                    <a href="/detailProduit/{{ prd.id }}" class="btn btn-success">Voir les details</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+
+    <!--L'espace des offres Fruit De Mer -->
+    <h2>Fruit de Mer:</h2>
+    <br>
+    <div class="wrapper-produits">
+        {% for prd in fruitDeMer %}
+            <div class="card shadow-lg rounded">
+                <div class="image mr-3" style="background-image:url({{ prd.photo }});">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ prd.nom }}</h5>
+                    <p class="card-text">prix : {{ prd.prix }} €/kg </p>
+                    <a href="/detailProduit/{{ prd.id }}" class="btn btn-success">Voir les details</a>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+    <br>
 {% endblock %}
