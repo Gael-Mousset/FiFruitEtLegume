@@ -1,0 +1,29 @@
+.example-wrapper { margin: 1em auto; font: 18px/1.5 sans-serif; }
+.example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+a{
+    color: darkgrey;
+}
+a:hover{
+    color: limegreen;
+}
+
+#localisation{
+    font-size: 15px;
+    text-decoration: underline;
+}
+#localisation-icon{
+    width: 30px;
+    height: 30px;
+    margin-right: -10px;
+}
+
+.image {
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+}
+
+.image img {
+    display: none;
+}

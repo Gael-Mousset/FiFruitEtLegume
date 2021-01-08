@@ -1,0 +1,21 @@
+.example-wrapper { margin: 1em auto;  width: 100%; font: 18px/1.5 sans-serif; }
+.exemple-wrapper h1 { margin:auto; }
+.example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+.wrapper {display: flex; flex-direction: row; }
+.presentation {display: flex; flex-direction: column; width: 20%; margin: 1em;}
+/*.presentation .image { margin: auto; width: 10em; height: 10em;}*/
+.nom {margin: auto; padding-top: 5px; }
+.info {margin: 5px; padding-left: 20px }
+
+.imageProduit{
+    background-size: cover;
+    width: 10em;
+    height: 10em;
+    margin: auto;
+}
+
+.imageProfil {
+    background-size: cover;
+    width: 5em;
+    height: 5em;
+}

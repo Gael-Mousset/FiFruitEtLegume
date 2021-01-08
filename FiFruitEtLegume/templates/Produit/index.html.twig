@@ -1,22 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Page des produits{% endblock %}
-
+{% block stylesheets %} <link href="{{ asset('css/produit/index.css') }}" rel="stylesheet">{% endblock %}
 {% block body %}
-    <style>
-        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-        .example-wrapper code { background: #F5F5F5;  }
-        .wrapper-produits {
-            width: 100%; display: flex; flex-flow: row; flex-wrap: wrap;
-            justify-content: center; align-items: flex-start;
-        }
-
-        .card { width: 15em; margin: 15px;}
-        .card-body #produit a { width: 100%; background-color: #44a044 }
-        .image { background-size: cover; width: 100%; height: 15em; }
-        .image img { display: none; }
-    </style>
-
     <div class="example-wrapper">
         <br><h1>Bienvenue dans la page des produits</h1><br><br>
     </div>
