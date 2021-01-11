@@ -13,6 +13,7 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $Producteur1=new Producteur();
+        $Producteur1->setId(1);
         $Producteur1->setPrenom('Mathis');
         $Producteur1->setNom('Hamelotte');
         $Producteur1->setNomDeLEntreprise('PetitPotager');
@@ -137,6 +138,7 @@ class AppFixtures extends Fixture
 
         //produit
         $Produit1=new Produit();
+        $Produit1->setId(1);
         $Produit1->setNom('Carotte');
         $Produit1->setDescription('Carotte cultiver dans mon potager');
         $Produit1->setType('legume');
