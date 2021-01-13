@@ -19,26 +19,32 @@
         {
             width: 70%;
         }
+        span
+        {
+            color: RED;
+            font-size: 12px;
+        }
     </style>
+
+    {{ inscription }}
 
     {{ form_start(form, {'attr': {'class': 'row'}}) }}
     <div class="formCoteText">
         <div class="formTextElement">
             {{ form_label(form.nom) }} (Obligatoire)
         </div>
-
         <div class="formTextElement">
             {{ form_label(form.prenom) }} (Obligatoire)
         </div>
-
+        <div class="formTextElement">
+            {{ form_label(form.mdp) }} (Obligatoire)
+        </div>
         <div class="formTextElement">
             {{ form_label(form.adresse) }} (Obligatoire)
         </div>
-
         <div class="formTextElement">
             {{ form_label(form.telephone) }} (Optionnel)
         </div>
-
         <div class="formTextElement">
             {{ form_label(form.photo) }} (Optionnel)
         </div>
@@ -47,24 +53,29 @@
         <div class="formChampElement col s12 m6 l6">
             {{ form_widget(form.nom, {'attr': {'placeholder': 'Dupond', 'style': 'width:50%'}}) }}
         </div>
-
         <div class="formChampElement col s12 m6 l6">
             {{ form_widget(form.prenom, {'attr': {'placeholder': 'Claude', 'style': 'width:50%'}}) }}
         </div>
-
+        <div class="formChampElement col s12 m6 l6">
+            {{ form_widget(form.mdp, {'attr': {'placeholder': 'AjkG/', 'style': 'width:50%'}}) }}
+        </div>
         <div class="formChampElement col s12 m6 l6">
             {{ form_widget(form.adresse, {'attr': {'placeholder': '13 rue André Gabaret', 'style': 'width:80%'}}) }}
         </div>
-
         <div class="formChampElement col s12 m6 l6">
             {{ form_widget(form.telephone, {'attr': {'placeholder': '0545667788', 'style': 'width:20%'}}) }}
         </div>
-
         <div class="formChampElement col s12 m6 l6">
             {{ form_widget(form.photo, {'attr': {'placeholder': 'http://photoDeMoi.org', 'style': 'width:80%'}}) }}
         </div>
         <div class="formChampElement col s12 m12 l12">
             <input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+            <span class="error">
+                {{ form_errors(form.nom) }}
+                {{ form_errors(form.prenom) }}
+                {{ form_errors(form.adresse) }}
+                {{ form_errors(form.nom) }}
+            </span>
         </div>
     </div>
 
