@@ -1,32 +1,38 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ name }}{% endblock %}
 {% block body %}
-    <style>
-
-    </style>
     <div>
-        <form action="/Consommateur.php" method="post">
-            <div>
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="user_nom">
+        {{ form_start(form, {'attr': {'class': 'row'}}) }}
+        <dv>
+            <div class="input-field col s12 m6 l6">
+                {{ form_label(form.nom) }}
+                {{ form_widget(form.nom, {'attr': {'placeholder': 'Dupond'}}) }}
             </div>
-            <div>
-                <label for="prenom">Prenom :</label>
-                <input type="text" id="prenom" name="user_prenom">
+
+            <div class="input-field col s12 m6 l6">
+                {{ form_label(form.prenom) }}
+                {{ form_widget(form.prenom, {'attr': {'placeholder': 'Claude'}}) }}
             </div>
-            <div>
-                <label for="adresse">Adresse :</label>
-                <input type="text" id="adresse" name="user_adresse">
+
+            <div class="input-field col s12 m6 l6">
+                {{ form_label(form.adresse) }}
+                {{ form_widget(form.adresse, {'attr': {'placeholder': '13 rue André Gabaret'}}) }}
             </div>
-            <div>
-                <label for="telephone">Telephone :</label>
-                <input type="text" id="telephone" name="user_telephone">
+
+            <div class="input-field col s12 m6 l6">
+                {{ form_label(form.telephone) }}
+                {{ form_widget(form.telephone, {'attr': {'placeholder': '0545667788'}}) }}
             </div>
-            <div>
-                <label for="photo">Photo :</label>
-                <input type="text" id="photo" name="user_photo">
+
+            <div class="input-field col s12 m6 l6">
+                {{ form_label(form.photo) }}
+                {{ form_widget(form.photo, {'attr': {'placeholder': 'http://photoDeMoi.org'}}) }}
             </div>
-            <!-- Bouton -->
-        </form>
+
+            <div class="input-field col s12 m12 l12">
+                <input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+            </div>
+        </dv>
+        {{ form_end(form) }}
     </div>
 {% endblock %}
