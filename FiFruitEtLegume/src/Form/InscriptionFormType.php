@@ -16,8 +16,8 @@ class InscriptionFormType extends AbstractType
             ->add('nom', TextType::class)
             ->add('prenom', TextType::class)
             ->add('adresse', TextType::class)
-            ->add('telephone', TextType::class)
-            ->add('photo', TextType::class)
+            ->add('telephone', TextType::class, array('required' => false))
+            ->add('photo', TextType::class, array('required' => false))
         ;
     }
 
