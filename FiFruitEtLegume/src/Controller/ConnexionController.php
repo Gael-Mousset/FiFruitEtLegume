@@ -31,31 +31,36 @@ class ConnexionController extends AbstractController
         $form = $this->createForm(InscriptionFormType::class, $consommateur);
 
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid())
+        if($form->isSubmitted())
         {
-            $em = $this->getDoctrine()->getManager(); // On récupère l'entity manager
-            $em->persist($consommateur); // On confie notre entité à l'entity manager (on persist l'entité)
-            $em->flush(); // On execute la requete
+            if($form->isValid())
+            {
+                $em = $this->getDoctrine()->getManager(); // On récupère l'entity manager
+                $em->persist($consommateur); // On confie notre entité à l'entity manager (on persist l'entité)
+                $em->flush(); // On execute la requete
 
-            return $this->render('Connexion/connexion.html.twig', [
-                "name" => "Inscription" ,
-                'form' => $form->createView(),
-                'inscription' => "L\'inscription est validé."
-            ]);
+                return $this->render('Connexion/connexion.html.twig', [
+                    "name" => "Inscription",
+                    'form' => $form->createView(),
+                    'inscription' => "L'inscription est validé."
+                ]);
+            }
+            else
+            {
+                return $this->render('Connexion/connexion.html.twig', [
+                    "name" => "Inscription" ,
+                    'form' => $form->createView(),
+                    'inscription' => "L'inscription est refusé."
+                ]);
+            }
         }
         else
         {
             return $this->render('Connexion/connexion.html.twig', [
                 "name" => "Inscription" ,
                 'form' => $form->createView(),
-                'inscription' => "L\'inscription est refusé."
+                'inscription' => "Voulez-vous vous inscrire?"
             ]);
         }
-
-        return $this->render('Connexion/connexion.html.twig', [
-            "name" => "Inscription" ,
-            'form' => $form->createView(),
-            'inscription' => "Voulez-vous vous inscrire?"
-        ]);
     }
 }
