@@ -18,14 +18,13 @@ class TestRoute extends WebTestCase
     {
         $client = static::createClient();
         $client->request('GET', '/producteur');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(500, $client->getResponse()->getStatusCode());
     }
 
-    /*
     public function testRouteDetailProducteur()
     {
         $client = static::createClient();
-        $client->request('GET', '/producteur/111');
+        $client->request('GET', '/producteur/126');
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
@@ -41,5 +40,12 @@ class TestRoute extends WebTestCase
         $client = static::createClient();
         $client->request('GET', '/produit/145');
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-    }*/
+    }
+
+    public function testRouteCarteProducteur()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/carteproducteur/126');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+    }
 }
