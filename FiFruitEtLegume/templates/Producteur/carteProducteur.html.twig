@@ -50,12 +50,14 @@
             popupAnchor: [0, -64]
         });
 
+        //marqueur - localisation du producteur
         L.marker([{{ producteur.lat }}, {{ producteur.lng }}], {icon: customIcon}).addTo(map)
             // Bind du click sur un point qui affiche une popup
             .bindPopup("{{ producteur.nom }} - {{ producteur.prenom }}<br>{{ producteur.adresse }}<br>{{ producteur.telephone }}");
 
         startLatLng=map.locate;
 
+        //marqueur qui a pour coordonnée la localisation du client
         function onLocationFound(e) {
             var radius = e.accuracy /3;
 
