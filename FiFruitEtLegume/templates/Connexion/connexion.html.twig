@@ -24,29 +24,54 @@
             color: RED;
             font-size: 12px;
         }
+        .messageFormulaire
+        {
+            width: 100%;
+            font-size: 30px;
+            padding: 5px;
+        }
     </style>
 
-    {{ inscription }}
+    <div>
+        <!-- TODO text introduction page -->
+    </div>
+
+    {% if validationInscription == null %}
+        <div class="messageFormulaire">
+            {{ inscription }}
+        </div>
+    {% elseif validationInscription == true %}
+        <div class="messageFormulaire" style="background-color: green">
+            {{ inscription }}
+        </div>
+    {% elseif validationInscription == false %}
+        <div class="messageFormulaire" style="background-color: red">
+            {{ inscription }}
+        </div>
+    {% endif %}
 
     {{ form_start(form, {'attr': {'class': 'row'}}) }}
     <div class="formCoteText">
         <div class="formTextElement">
-            {{ form_label(form.nom) }} (Obligatoire)
+            {{ form_label(form.nom) }} *
         </div>
         <div class="formTextElement">
-            {{ form_label(form.prenom) }} (Obligatoire)
+            {{ form_label(form.prenom) }} *
         </div>
         <div class="formTextElement">
-            {{ form_label(form.mdp) }} (Obligatoire)
+            {{ form_label(form.mdp) }} *
         </div>
         <div class="formTextElement">
-            {{ form_label(form.adresse) }} (Obligatoire)
+            {{ form_label(form.mail) }} *
         </div>
         <div class="formTextElement">
-            {{ form_label(form.telephone) }} (Optionnel)
+            {{ form_label(form.adresse) }} *
         </div>
         <div class="formTextElement">
-            {{ form_label(form.photo) }} (Optionnel)
+            {{ form_label(form.telephone) }}
+        </div>
+        <div class="formTextElement">
+            {{ form_label(form.photo) }}
         </div>
     </div>
     <div class="formCoteChamp">
@@ -58,6 +83,9 @@
         </div>
         <div class="formChampElement col s12 m6 l6">
             {{ form_widget(form.mdp, {'attr': {'placeholder': 'AjkG/', 'style': 'width:50%'}}) }}
+        </div>
+        <div class="formChampElement col s12 m6 l6">
+            {{ form_widget(form.mail, {'attr': {'placeholder': 'jean.dupond@gmail.com/', 'style': 'width:80%'}}) }}
         </div>
         <div class="formChampElement col s12 m6 l6">
             {{ form_widget(form.adresse, {'attr': {'placeholder': '13 rue André Gabaret', 'style': 'width:80%'}}) }}
@@ -73,6 +101,8 @@
             <span class="error">
                 {{ form_errors(form.nom) }}
                 {{ form_errors(form.prenom) }}
+                {{ form_errors(form.mdp) }}
+                {{ form_errors(form.mail) }}
                 {{ form_errors(form.adresse) }}
                 {{ form_errors(form.nom) }}
             </span>

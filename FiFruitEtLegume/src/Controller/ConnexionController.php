@@ -42,6 +42,7 @@ class ConnexionController extends AbstractController
                 return $this->render('Connexion/connexion.html.twig', [
                     "name" => "Inscription",
                     'form' => $form->createView(),
+                    'validationInscription' => true,
                     'inscription' => "L'inscription est validé."
                 ]);
             }
@@ -50,6 +51,7 @@ class ConnexionController extends AbstractController
                 return $this->render('Connexion/connexion.html.twig', [
                     "name" => "Inscription" ,
                     'form' => $form->createView(),
+                    'validationInscription' => false,
                     'inscription' => "L'inscription est refusé."
                 ]);
             }
@@ -59,6 +61,7 @@ class ConnexionController extends AbstractController
             return $this->render('Connexion/connexion.html.twig', [
                 "name" => "Inscription" ,
                 'form' => $form->createView(),
+                'validationInscription' => null,
                 'inscription' => "Voulez-vous vous inscrire?"
             ]);
         }
