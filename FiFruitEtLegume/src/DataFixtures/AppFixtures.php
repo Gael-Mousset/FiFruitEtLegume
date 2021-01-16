@@ -327,9 +327,13 @@ class AppFixtures extends Fixture
         $consommateur1 = new Consommateur();
         $consommateur1->setNom('Duplicatif');
         $consommateur1->setPrenom('Michel');
+        $consommateur1->setMdp('123');
+        $consommateur1->setMail('Duplicatif.Michel@gmail.com');
         $consommateur1->setAdresse('13 rue des pas steak, La Rochelle 17 000');
         $consommateur1->setTelephone('');
         $consommateur1->setPhoto('');
+
+        $manager->persist($consommateur1);
 
         $manager->flush();
 
