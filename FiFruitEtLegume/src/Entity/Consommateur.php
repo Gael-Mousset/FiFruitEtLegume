@@ -3,10 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\ConsommateurRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ConsommateurRepository::class)
+ * @UniqueEntity(
+ *     fields={"mail"},
+ *     message="Ce mail est déjà utilisé."
+ * )
  */
 class Consommateur
 {
@@ -29,6 +34,7 @@ class Consommateur
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
      */
     private $adresse;
 
@@ -46,6 +52,11 @@ class Consommateur
      * @ORM\Column(type="string", length=255)
      */
     private $mdp;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $mail;
 
     public function getId(): ?int
     {
@@ -120,6 +131,18 @@ class Consommateur
     public function setMdp(string $mdp): self
     {
         $this->mdp = $mdp;
+
+        return $this;
+    }
+
+    public function getMail(): ?string
+    {
+        return $this->mail;
+    }
+
+    public function setMail(string $mail): self
+    {
+        $this->mail = $mail;
 
         return $this;
     }
