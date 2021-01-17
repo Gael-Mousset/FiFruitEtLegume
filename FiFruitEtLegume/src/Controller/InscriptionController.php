@@ -10,14 +10,14 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\InscriptionFormType;
 use App\Entity\Consommateur;
 
-class ConnexionController extends AbstractController
+class InscriptionController extends AbstractController
 {
     /**
      * @Route("/inscription", name="inscription")
      */
     public function inscription()
     {
-        return $this->render('Connexion/connexion.html.twig', [
+        return $this->render('Connexion/inscription.html.twig', [
             "name" => "Inscription"
         ]);
     }
@@ -39,7 +39,7 @@ class ConnexionController extends AbstractController
                 $em->persist($consommateur); // On confie notre entité à l'entity manager (on persist l'entité)
                 $em->flush(); // On execute la requete
 
-                return $this->render('Connexion/connexion.html.twig', [
+                return $this->render('Connexion/inscription.html.twig', [
                     "name" => "Inscription",
                     'form' => $form->createView(),
                     'validationInscription' => true,
@@ -48,7 +48,7 @@ class ConnexionController extends AbstractController
             }
             else
             {
-                return $this->render('Connexion/connexion.html.twig', [
+                return $this->render('Connexion/inscription.html.twig', [
                     "name" => "Inscription" ,
                     'form' => $form->createView(),
                     'validationInscription' => false,
@@ -58,7 +58,7 @@ class ConnexionController extends AbstractController
         }
         else
         {
-            return $this->render('Connexion/connexion.html.twig', [
+            return $this->render('Connexion/inscription.html.twig', [
                 "name" => "Inscription" ,
                 'form' => $form->createView(),
                 'validationInscription' => null,
