@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ name }}{% endblock %}
+{% block body %}
+    <style>
+        .formTextElement
+        {
+            margin: 10px;
+        }
+        .formChampElement
+        {
+            margin: 10px;
+            width: 100%;
+        }
+        .formCoteText
+        {
+            width: 30%;
+        }
+        .formCoteChamp
+        {
+            width: 70%;
+        }
+        span
+        {
+            color: RED;
+            font-size: 12px;
+        }
+        .messageFormulaire
+        {
+            width: 100%;
+            font-size: 30px;
+            padding: 5px;
+        }
+    </style>
+
+    <div>
+        <!-- TODO text introduction page -->
+    </div>
+
+    {% if validationInscription == null %}
+        <div class="messageFormulaire">
+            {{ inscription }}
+        </div>
+    {% elseif validationInscription == true %}
+        <div class="messageFormulaire" style="background-color: green">
+            {{ inscription }}
+        </div>
+    {% elseif validationInscription == false %}
+        <div class="messageFormulaire" style="background-color: red">
+            {{ inscription }}
+        </div>
+    {% endif %}
+
+    {{ form_start(form, {'attr': {'class': 'row'}}) }}
+    <div class="formCoteText">
+        <div class="formTextElement">
+            {{ form_label(form.nom) }} *
+        </div>
+        <div class="formTextElement">
+            {{ form_label(form.prenom) }} *
+        </div>
+        <div class="formTextElement">
+            {{ form_label(form.mdp) }} *
+        </div>
+        <div class="formTextElement">
+            {{ form_label(form.mail) }} *
+        </div>
+        <div class="formTextElement">
+            {{ form_label(form.adresse) }} *
+        </div>
+        <div class="formTextElement">
+            {{ form_label(form.telephone) }}
+        </div>
+        <div class="formTextElement">
+            {{ form_label(form.photo) }}
+        </div>
+    </div>
+    <div class="formCoteChamp">
+        <div class="formChampElement col s12 m6 l6">
+            {{ form_widget(form.nom, {'attr': {'placeholder': 'Dupond', 'style': 'width:50%'}}) }}
+        </div>
+        <div class="formChampElement col s12 m6 l6">
+            {{ form_widget(form.prenom, {'attr': {'placeholder': 'Claude', 'style': 'width:50%'}}) }}
+        </div>
+        <div class="formChampElement col s12 m6 l6">
+            {{ form_widget(form.mdp, {'attr': {'placeholder': 'AjkG/', 'style': 'width:50%'}}) }}
+        </div>
+        <div class="formChampElement col s12 m6 l6">
+            {{ form_widget(form.mail, {'attr': {'placeholder': 'jean.dupond@gmail.com/', 'style': 'width:80%'}}) }}
+        </div>
+        <div class="formChampElement col s12 m6 l6">
+            {{ form_widget(form.adresse, {'attr': {'placeholder': '13 rue André Gabaret', 'style': 'width:80%'}}) }}
+        </div>
+        <div class="formChampElement col s12 m6 l6">
+            {{ form_widget(form.telephone, {'attr': {'placeholder': '0545667788', 'style': 'width:20%'}}) }}
+        </div>
+        <div class="formChampElement col s12 m6 l6">
+            {{ form_widget(form.photo, {'attr': {'placeholder': 'http://photoDeMoi.org', 'style': 'width:80%'}}) }}
+        </div>
+        <div class="formChampElement col s12 m12 l12">
+            <input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+            <span class="error">
+                {{ form_errors(form.nom) }}
+                {{ form_errors(form.prenom) }}
+                {{ form_errors(form.mdp) }}
+                {{ form_errors(form.mail) }}
+                {{ form_errors(form.adresse) }}
+                {{ form_errors(form.nom) }}
+            </span>
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}

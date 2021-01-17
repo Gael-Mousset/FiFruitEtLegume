@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Producteur;
 use App\Entity\Produit;
+use App\Entity\Consommateur;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -13,6 +14,7 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $Producteur1=new Producteur();
+        $Producteur1->setId(1);
         $Producteur1->setPrenom('Mathis');
         $Producteur1->setNom('Hamelotte');
         $Producteur1->setNomDeLEntreprise('PetitPotager');
@@ -20,6 +22,8 @@ class AppFixtures extends Fixture
         $Producteur1->setAdresse('3 rue des accacias, 17430 Saint-Hippolyte');
         $Producteur1->setTelephone('0662378055');
         $Producteur1->setPhoto('https://cdn.discordapp.com/attachments/651778097825185804/783019682608316476/FaceApp_1606756816268.jpg');
+        $Producteur1->setLat(46.158051);
+        $Producteur1->setLng(-1.153400);
         
         $manager->persist($Producteur1);
 
@@ -31,6 +35,8 @@ class AppFixtures extends Fixture
         $Producteur2->setAdresse('6 rue des fifruit, 17000 La Rochelle');
         $Producteur2->setTelephone('0600000001');
         $Producteur2->setPhoto('https://cdn.discordapp.com/attachments/689876665584845009/786557638217170954/Snapchat-1264765459.jpg');
+        $Producteur2->setLat(45.945030);
+        $Producteur2->setLng(-0.975670);
 
         $manager->persist($Producteur2);
 
@@ -42,6 +48,8 @@ class AppFixtures extends Fixture
         $Producteur3->setAdresse('9 rue des filegume, 17300 Rochefort');
         $Producteur3->setTelephone('0600000002');
         $Producteur3->setPhoto('https://www.sante-sur-le-net.com/wp-content/uploads/2018/07/fraise-sante.jpg');
+        $Producteur3->setLat(46.107609);
+        $Producteur3->setLng(-0.751870);
 
         $manager->persist($Producteur3);
 
@@ -53,6 +61,8 @@ class AppFixtures extends Fixture
         $Producteur4->setAdresse('8 rue Charles de Gaulle, 17440 Aytré');
         $Producteur4->setTelephone('0600000003');
         $Producteur4->setPhoto('https://www.monpetitcoinvert.com/blog/wp-content/uploads/2019/03/potager-2-1-600x420.jpg');
+        $Producteur4->setLat(46.2);
+        $Producteur4->setLng(-1.15);
 
         $manager->persist($Producteur4);
 
@@ -64,6 +74,8 @@ class AppFixtures extends Fixture
         $Producteur5->setAdresse('8 rue Louis Pasteur, 17320 Marenne');
         $Producteur5->setTelephone('0600000004');
         $Producteur5->setPhoto('https://www.poettinger.at/img/landtechnik/newsletter/PRIMO_401_D_Lindner-6054.jpg');
+        $Producteur5->setLat(46.158051);
+        $Producteur5->setLng(-1.153400);
 
         $manager->persist($Producteur5);
 
@@ -75,6 +87,8 @@ class AppFixtures extends Fixture
         $Producteur6->setAdresse('3 rue des accacias, 17200 Royan');
         $Producteur6->setTelephone('0600000005');
         $Producteur6->setPhoto('https://static.aujardin.info/cache/th/img8/potager-carres-600x450.webp?1');
+        $Producteur6->setLat(46.158051);
+        $Producteur6->setLng(-1.153400);
 
         $manager->persist($Producteur6);
 
@@ -86,6 +100,8 @@ class AppFixtures extends Fixture
         $Producteur7->setAdresse('3 rue des accacias, 17100 Sainte');
         $Producteur7->setTelephone('0600000006');
         $Producteur7->setPhoto('grathis');
+        $Producteur7->setLat(46.158051);
+        $Producteur7->setLng(-1.153400);
 
         $manager->persist($Producteur7);
 
@@ -97,6 +113,8 @@ class AppFixtures extends Fixture
         $Producteur8->setAdresse('3 rue Jules Ferry, 17430 Tonnay-Charente');
         $Producteur8->setTelephone('0600000007');
         $Producteur8->setPhoto('https://www.orgaya.fr/get_square/253/data/producteur/portrait-cpfnj.png');
+        $Producteur8->setLat(46.158051);
+        $Producteur8->setLng(-1.153400);
 
         $manager->persist($Producteur8);
 
@@ -108,6 +126,8 @@ class AppFixtures extends Fixture
         $Producteur9->setAdresse('17 Avenue Charles de Gaulle, 17450 Fouras');
         $Producteur9->setTelephone('0600000008');
         $Producteur9->setPhoto('https://france3-regions.francetvinfo.fr/image/g616OgE97ftCKGg6Whj4GASXc5A/930x620/regions/2020/06/09/5edef726d260b_xavierbeulin-2911823.jpg');
+        $Producteur9->setLat(46.158051);
+        $Producteur9->setLng(-1.153400);
 
         $manager->persist($Producteur9);
 
@@ -119,6 +139,8 @@ class AppFixtures extends Fixture
         $Producteur10->setAdresse('3 rue Léon Gambetta, 17138 Saint-Xandre');
         $Producteur10->setTelephone('0600000009');
         $Producteur10->setPhoto('grathis');
+        $Producteur10->setLat(46.158051);
+        $Producteur10->setLng(-1.153400);
 
         $manager->persist($Producteur10);
 
@@ -130,6 +152,8 @@ class AppFixtures extends Fixture
         $Producteur11->setAdresse('3 rue Victor Hugo, 17620 Echillais');
         $Producteur11->setTelephone('0600000010');
         $Producteur11->setPhoto('grathis');
+        $Producteur11->setLat(46.158051);
+        $Producteur11->setLng(-1.153400);
 
         $manager->persist($Producteur11);
 
@@ -137,6 +161,7 @@ class AppFixtures extends Fixture
 
         //produit
         $Produit1=new Produit();
+        $Produit1->setId(1);
         $Produit1->setNom('Carotte');
         $Produit1->setDescription('Carotte cultiver dans mon potager');
         $Produit1->setType('legume');
@@ -322,6 +347,17 @@ class AppFixtures extends Fixture
         $Produit16->setProducteur($Producteur2);
 
         $manager->persist($Produit16);
+
+        $consommateur1 = new Consommateur();
+        $consommateur1->setNom('Duplicatif');
+        $consommateur1->setPrenom('Michel');
+        $consommateur1->setMdp('123');
+        $consommateur1->setMail('Duplicatif.Michel@gmail.com');
+        $consommateur1->setAdresse('13 rue des pas steak, La Rochelle 17 000');
+        $consommateur1->setTelephone('');
+        $consommateur1->setPhoto('');
+
+        $manager->persist($consommateur1);
 
         $manager->flush();
 

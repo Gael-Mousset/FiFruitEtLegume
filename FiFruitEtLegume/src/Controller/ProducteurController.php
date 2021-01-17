@@ -84,8 +84,26 @@ class ProducteurController extends AbstractController
             'cesViandes' => $listeViandes,
             'cesPoissons' => $listePoissons,
             'cesFruitDeMer' => $listeFruitDeMer,
-            'cesFromages' => $listeFromage
+            'cesFromages' => $listeFromage,
         ]);
     }
+
+    /**
+     * @Route("/carteproducteur/{id}", name="carteproducteur")
+     */
+    public function carteproducteur($id)
+    {
+        //acces aux services Doctrine, puis entityManager, puis Répository de l'object Producteur :
+        $repository=$this->getDoctrine()->getManager()->getRepository('App\Entity\Producteur');
+
+        $producteurChoisi=$repository->find($id);
+
+        return $this->render('Producteur/carteProducteur.html.twig', [
+            'controller_name' => 'carteProducteurController',
+            'producteur' => $producteurChoisi,
+        ]);
+    }
+
+
 
 }

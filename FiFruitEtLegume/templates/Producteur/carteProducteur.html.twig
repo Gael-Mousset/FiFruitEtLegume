@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ producteur.prenom }} {{ producteur.nom }}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <link href="{{ asset('css/producteur/carteProducteur.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="example-wrapper">
+        <a class="navbar-brand" href="/producteur/">
+            <img src="{{ asset('fleche gauche') }}" width="96" height="96" class="d-inline-block align-top" alt="">
+        </a>
+        <br>
+
+        {% if producteur.nomdelentreprise == null %}
+            <p> Bienvenue chez <strong>{{ producteur.prenom }} {{ producteur.nom }}</strong></p>
+        {% else %}
+            <p> Bienvenue chez <strong>{{ producteur.nomdelentreprise }} - {{ producteur.prenom }} {{ producteur.nom }}</strong></p>
+        {% endif %}
+
+        <p>Ici vous pouvez localiser un lieu de rencontre avec ce producteur.</p>
+
+        <div id="map" style="height:500px"></div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script>
+        // Création de votre map dans votre conteneur "map", coordonnées de centrage et niveau de zoom par défaut.
+        let map = L.map('map').setView([46.158051, -1.153400], 7);// setView position de la carte par défaut si la position de client ne peut pas etre obtenu
+        // Création du fond de carte
+        L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var customIcon = L.icon({
+            iconUrl:'{{asset('location-icon-vert')}}',
+            iconSize: [96,96],
+            iconAnchor: [48,80],
+            popupAnchor: [0, -64]
+        });
+
+        var customIconMyLocation = L.icon({
+            iconUrl:'{{asset('location-icon-blue')}}',
+            iconSize: [64,64],
+            iconAnchor: [32,80],
+            popupAnchor: [0, -64]
+        });
+
+        //marqueur - localisation du producteur
+        L.marker([{{ producteur.lat }}, {{ producteur.lng }}], {icon: customIcon}).addTo(map)
+            // Bind du click sur un point qui affiche une popup
+            .bindPopup("{{ producteur.nom }} - {{ producteur.prenom }}<br>{{ producteur.adresse }}<br>{{ producteur.telephone }}");
+
+        startLatLng=map.locate;
+
+        //marqueur qui a pour coordonnée la localisation du client
+        function onLocationFound(e) {
+            var radius = e.accuracy /3;
+
+            L.marker(e.latlng, {icon: customIconMyLocation}).addTo(map)
+                .bindPopup("<p style='color:#3386FF'>Vous êtes ici ! <p>").openPopup();
+
+            //permet d'avoir un position approximation de la position du client, si elle n'est pas détecté précisement
+            L.circle(e.latlng, radius).addTo(map);
+        }
+
+        map.on('locationfound', onLocationFound);
+
+        map.locate({setView: true, maxZoom: 16});
+
+        /*
+        //gestion d'itinéraires
+        L.Routing.control({
+            waypoints: [
+                null,
+                L.latLng({{ producteur.lat }}, {{ producteur.lng }})
+            ],
+            geocoder: L.Control.Geocoder.nominatim(),
+            router: new L.Routing.osrmv1({
+                language: 'fr'
+            })
+        }).addTo(map);
+        */
+    </script>
+{% endblock %}
+
+
+
+
+
