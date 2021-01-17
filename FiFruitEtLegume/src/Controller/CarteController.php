@@ -17,7 +17,7 @@ class CarteController extends AbstractController
 
         $repositoryProducteur = $this->getDoctrine()->getManager()->getRepository("App\Entity\Producteur");
         $producteurs = $repositoryProducteur->findAll();
-        return $this->render('carte/index.html.twig', [
+        return $this->render('Carte/index.html.twig', [
             'controller_name' => 'CarteController',
             //'data' => $fake_data,
             'data' =>$producteurs
